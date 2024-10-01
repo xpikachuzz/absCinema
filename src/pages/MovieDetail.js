@@ -1,7 +1,7 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Header, Footer } from "../components/index"
 import { useFetch } from "../assets/index";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 
 
