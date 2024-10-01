@@ -4,10 +4,12 @@ import { MovieList, MovieDetail, Search, PageNotFound } from "../pages"
 
 
 import React from 'react'
+import { Footer, Header } from "../components"
 
 export const AllRoutes = () => {
   return (
-    <>
+    <div className="h-full">
+      <Header />
       <Routes>
         <Route path="" element={<MovieList title="Cinemate" api="https://api.jikan.moe/v4/anime?status=airing" />} />
         <Route path="/anime/:id" element={<MovieDetail api="https://api.jikan.moe/v4/anime/" />} />
@@ -18,6 +20,7 @@ export const AllRoutes = () => {
         <Route path="/search/:name" element={<Search title="Cinemate - Search" />} />
         <Route path="*" element={<PageNotFound title="Page Not Found" />} />
       </Routes>
-    </>
+      <Footer />
+    </div>
   )
 }

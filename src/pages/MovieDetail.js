@@ -67,9 +67,7 @@ export const MovieDetail = ({ api }) => {
 
   return (
     <div>
-      <Header />
       {render()}
-      <Footer />
     </div>
   )
 }

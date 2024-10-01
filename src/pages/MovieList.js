@@ -1,5 +1,4 @@
 import React from 'react'
-import { Footer, Header } from "../components/index"
 import { Card } from '../components/Card'
 import { useParams } from 'react-router-dom'
 import { useFetch } from "../assets/index"
@@ -35,7 +34,6 @@ export const MovieList = ({ api, title }) => {
 
   return (
     <main>
-      <Header />
       <section className="pt-14 pl-10">
         <div className='flex justify-center flex-wrap'>
           {
@@ -43,7 +41,6 @@ export const MovieList = ({ api, title }) => {
           }
         </div>
       </section>
-      <Footer />
     </main>
   )
 }
