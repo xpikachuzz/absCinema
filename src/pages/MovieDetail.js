@@ -35,7 +35,7 @@ export const MovieDetail = ({ api }) => {
         backg: data.data.background,
         src: data.data.images.jpg.large_image_url,
         alt: data.data.images.jpg.image_url,
-        genre: data.data.genres.map(({ name }) => name),
+        genre: data.data.genres.map(({ name, mal_id }) => ({ name, mal_id })),
         broadcast: data.data.broadcast,
         studios: data.data.studios.map(({ name }) => name),
       }
@@ -49,8 +49,8 @@ export const MovieDetail = ({ api }) => {
               <h1 className="text-5xl font-bold mb-4">{resource.title}</h1>
               <p className="text-sm">{resource.synp}</p>
               <div className="flex flex-row">
-                {resource.genre.map(genre => <Link to={`/animes/genre/${genre}`} className="text-sm p-3 py-2 border-2 opacity-70 rounded m-4 hover:opacity-40 hover:cursor-pointer">
-                  {genre}
+                {resource.genre.map(({ name, mal_id }) => <Link key={mal_id} to={`/animes/genre/${mal_id}`} className="text-sm p-3 py-2 border-2 opacity-70 rounded m-4 hover:opacity-40 hover:cursor-pointer">
+                  {name}
                 </Link>)}
               </div>
               <span className="flex"><p className="font-bold">Score: </p> ⭐{resource.score}</span>

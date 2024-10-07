@@ -34,7 +34,7 @@ export const Header = () => {
           <div className='bg-blue-900 rounded'>
             <button onClick={() => setDarkMode(!darkMode)} className='ml-1 px-2 py-1 rounded bg-blue-700 dark:bg-blue-950 mr-1'>🔆</button>
             <input onChange={inputHandler} placeholder='Search' className='max-md:hidden py-1 pb-1 px-1.5 rounded bg-blue-950' />
-            <Link to={`/search/${search}`} onClick={() => setSearch("")} className='max-md:hidden py-1.5 ml-1 px-1.5 rounded bg-blue-950'>🔍</Link>
+            <Link to={`/search/${search}`} onClick={() => setSearch("search")} className='max-md:hidden py-1.5 ml-1 px-1.5 rounded bg-blue-950'>🔍</Link>
             <button onClick={() => setHidden(!hidden)} className='md:hidden ml-1 px-2 py-1 rounded bg-blue-950'>☰</button>
           </div>
         </div>

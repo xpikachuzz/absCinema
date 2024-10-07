@@ -1,19 +1,19 @@
-import { Footer, Header } from "../components"
-import { useEffect } from "react"
+import { useParams } from "react-router-dom";
+import { useTitle } from "../assets/useTitle";
+import { MovieList } from "./MovieList";
 
 
-export const Search = ({ title }) => {
+export const Search = ({ api }) => {
+  const { name } = useParams();
 
-  useEffect(() => {
-    document.title = title
-  })
+  useTitle(name)
+
 
   return (
     <>
-      <main>
-        <p className="text-7xl font-bold text-blue-200 text-center pt-40">
-          API DOESN'T PROVIDE
-        </p>
+      <main className="pt-10">
+        <h1 className="text-3xl font-semibold px-20 text-white" >Search: {name}</h1>
+        <MovieList name={name} api={api + name + "&order_by=rank"} />
       </main>
     </>)
 }
